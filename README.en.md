@@ -1,7 +1,7 @@
 # shop-mall-class2
 
 #### Description
-闽北软件2102实训项目讲解
+
 
 #### Software Architecture
 Software architecture description

@@ -1,0 +1,18 @@
+{
+    "sourceFile": "README.en.md",
+    "activeCommit": 0,
+    "commits": [
+        {
+            "activePatchIndex": 0,
+            "patches": [
+                {
+                    "date": 1685974797460,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n"
+                }
+            ],
+            "date": 1685974797460,
+            "name": "Commit-0",
+            "content": "# shop-mall-class2\n\n#### Description\n\n\n#### Software Architecture\nSoftware architecture description\n\n#### Installation\n\n1.  xxxx\n2.  xxxx\n3.  xxxx\n\n#### Instructions\n\n1.  xxxx\n2.  xxxx\n3.  xxxx\n\n#### Contribution\n\n1.  Fork the repository\n2.  Create Feat_xxx branch\n3.  Commit your code\n4.  Create Pull Request\n\n\n#### Gitee Feature\n\n1.  You can use Readme\\_XXX.md to support different languages, such as Readme\\_en.md, Readme\\_zh.md\n2.  Gitee blog [blog.gitee.com](https://blog.gitee.com)\n3.  Explore open source project [https://gitee.com/explore](https://gitee.com/explore)\n4.  The most valuable open source project [GVP](https://gitee.com/gvp)\n5.  The manual of Gitee [https://gitee.com/help](https://gitee.com/help)\n6.  The most popular members  [https://gitee.com/gitee-stars/](https://gitee.com/gitee-stars/)\n"
+        }
+    ]
+}
