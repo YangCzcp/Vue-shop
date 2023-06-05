@@ -10,7 +10,7 @@
 
       <el-form-item>
         <el-button type="primary" @click="login('form')">登录</el-button>
-        <el-button>取消</el-button>
+        <el-button @click="resetForm">重置</el-button>
       </el-form-item>
     </el-form>
   </div>
@@ -66,6 +66,9 @@ export default {
           this.$router.push('/goods')
         }
       })
+    },
+    resetForm() {
+      this.$refs["form"].resetFields();
     }
   }
 }
@@ -74,28 +77,44 @@ export default {
 <style lang="less" scoped>
 .login {
   display: flex;
+  flex-direction: column; /* 添加新属性，纵向排列子元素 */
   justify-content: center;
   align-items: center;
   min-height: 100vh;
-  background: url('@/assets/images/loginbg.png') no-repeat;
+  background: url('@/assets/images/loginbg.jpg') ;
   height: 100%;
   width: 100%;
   overflow: hidden;
 }
 
 .el-form {
-  width: 40%;
-  height: 40%;
+  width: 30%;
+  height: 30%;
   padding: 20px;
   padding-right: 40px;
   padding-top: 40px;
   border: 2px solid #ccc;
+  text-align: center; /* 新添加样式，居中子元素 */
+}
+.el-form-item {
+  margin-bottom: 20px;
+}
+
+.el-form-item button:first-of-type {
+  margin-right: 30px;
+}
+
+.el-form-item button:last-of-type {
+  margin-left: 20px;
+  // 右按钮
 }
 /deep/ .el-form-item__label {
+  // 字体
   color: #fff;
 }
 
 /deep/.el-input__inner {
-  background-color: #ccc;
+  background-color: #f4e8e8;
+  // 文本框
 }
 </style>

@@ -1,0 +1,98 @@
+{
+    "sourceFile": "admin/src/view/User/Login.vue",
+    "activeCommit": 0,
+    "commits": [
+        {
+            "activePatchIndex": 20,
+            "patches": [
+                {
+                    "date": 1685977120369,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n"
+                },
+                {
+                    "date": 1685977134074,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -76,9 +76,9 @@\n   display: flex;\n   justify-content: center;\n   align-items: center;\n   min-height: 100vh;\n-  background: url('@/assets/images/loginbg.jpg') no-repeat;\n+  background: url('@/assets/images/loginbg.jpg') ;\n   height: 100%;\n   width: 100%;\n   overflow: hidden;\n }\n"
+                },
+                {
+                    "date": 1685977739176,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -73,8 +73,9 @@\n \n <style lang=\"less\" scoped>\n .login {\n   display: flex;\n+  flex-direction: column; /* 添加新属性，纵向排列子元素 */\n   justify-content: center;\n   align-items: center;\n   min-height: 100vh;\n   background: url('@/assets/images/loginbg.jpg') ;\n@@ -89,8 +90,9 @@\n   padding: 20px;\n   padding-right: 40px;\n   padding-top: 40px;\n   border: 2px solid #ccc;\n+  text-align: center; /* 新添加样式，居中子元素 */\n }\n /deep/ .el-form-item__label {\n   color: #fff;\n }\n"
+                },
+                {
+                    "date": 1685977822369,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -73,9 +73,8 @@\n \n <style lang=\"less\" scoped>\n .login {\n   display: flex;\n-  flex-direction: column; /* 添加新属性，纵向排列子元素 */\n   justify-content: center;\n   align-items: center;\n   min-height: 100vh;\n   background: url('@/assets/images/loginbg.jpg') ;\n@@ -90,9 +89,8 @@\n   padding: 20px;\n   padding-right: 40px;\n   padding-top: 40px;\n   border: 2px solid #ccc;\n-  text-align: center; /* 新添加样式，居中子元素 */\n }\n /deep/ .el-form-item__label {\n   color: #fff;\n }\n"
+                },
+                {
+                    "date": 1685977834640,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -83,9 +83,9 @@\n   overflow: hidden;\n }\n \n .el-form {\n-  width: 40%;\n+  width: 30%;\n   height: 40%;\n   padding: 20px;\n   padding-right: 40px;\n   padding-top: 40px;\n"
+                },
+                {
+                    "date": 1685977865064,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -73,8 +73,9 @@\n \n <style lang=\"less\" scoped>\n .login {\n   display: flex;\n+  flex-direction: column; /* 添加新属性，纵向排列子元素 */\n   justify-content: center;\n   align-items: center;\n   min-height: 100vh;\n   background: url('@/assets/images/loginbg.jpg') ;\n@@ -83,14 +84,15 @@\n   overflow: hidden;\n }\n \n .el-form {\n-  width: 30%;\n+  width: 40%;\n   height: 40%;\n   padding: 20px;\n   padding-right: 40px;\n   padding-top: 40px;\n   border: 2px solid #ccc;\n+  text-align: center; /* 新添加样式，居中子元素 */\n }\n /deep/ .el-form-item__label {\n   color: #fff;\n }\n"
+                },
+                {
+                    "date": 1685977899519,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -9,9 +9,9 @@\n       </el-form-item>\n \n       <el-form-item>\n         <el-button type=\"primary\" @click=\"login('form')\">登录</el-button>\n-        <el-button>取消</el-button>\n+        <el-button>重置</el-button>\n       </el-form-item>\n     </el-form>\n   </div>\n </template>\n@@ -84,9 +84,9 @@\n   overflow: hidden;\n }\n \n .el-form {\n-  width: 40%;\n+  width: 30%;\n   height: 40%;\n   padding: 20px;\n   padding-right: 40px;\n   padding-top: 40px;\n"
+                },
+                {
+                    "date": 1685977919423,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -80,8 +80,9 @@\n   min-height: 100vh;\n   background: url('@/assets/images/loginbg.jpg') ;\n   height: 100%;\n   width: 100%;\n+  padding-left: 20px;\n   overflow: hidden;\n }\n \n .el-form {\n"
+                },
+                {
+                    "date": 1685977929534,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -80,9 +80,8 @@\n   min-height: 100vh;\n   background: url('@/assets/images/loginbg.jpg') ;\n   height: 100%;\n   width: 100%;\n-  padding-left: 20px;\n   overflow: hidden;\n }\n \n .el-form {\n"
+                },
+                {
+                    "date": 1685978061658,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -65,8 +65,11 @@\n           // 跳转\n           this.$router.push('/goods')\n         }\n       })\n+    },\n+    resetForm() {\n+      this.$refs[\"form\"].resetFields();\n     }\n   }\n }\n </script>\n"
+                },
+                {
+                    "date": 1685978094913,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -9,9 +9,9 @@\n       </el-form-item>\n \n       <el-form-item>\n         <el-button type=\"primary\" @click=\"login('form')\">登录</el-button>\n-        <el-button>重置</el-button>\n+        <el-button @click=\"resetForm\">重置</el-button>\n       </el-form-item>\n     </el-form>\n   </div>\n </template>\n"
+                },
+                {
+                    "date": 1685978186182,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -100,7 +100,7 @@\n   color: #fff;\n }\n \n /deep/.el-input__inner {\n-  background-color: #ccc;\n+  background-color: #8e1e1e;\n }\n </style>\n\\ No newline at end of file\n"
+                },
+                {
+                    "date": 1685978193549,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -100,7 +100,7 @@\n   color: #fff;\n }\n \n /deep/.el-input__inner {\n-  background-color: #8e1e1e;\n+  background-color: #f4e8e8;\n }\n </style>\n\\ No newline at end of file\n"
+                },
+                {
+                    "date": 1685978214500,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -95,8 +95,19 @@\n   padding-top: 40px;\n   border: 2px solid #ccc;\n   text-align: center; /* 新添加样式，居中子元素 */\n }\n+.el-form-item {\n+  margin-bottom: 20px;\n+}\n+\n+.el-form-item button:first-of-type {\n+  margin-right: 20px;\n+}\n+\n+.el-form-item button:last-of-type {\n+  margin-left: 20px;\n+}\n /deep/ .el-form-item__label {\n   color: #fff;\n }\n \n"
+                },
+                {
+                    "date": 1685978225280,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -88,9 +88,9 @@\n }\n \n .el-form {\n   width: 30%;\n-  height: 40%;\n+  height: 45%;\n   padding: 20px;\n   padding-right: 40px;\n   padding-top: 40px;\n   border: 2px solid #ccc;\n"
+                },
+                {
+                    "date": 1685978255493,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -88,9 +88,9 @@\n }\n \n .el-form {\n   width: 30%;\n-  height: 45%;\n+  height: 30%;\n   padding: 20px;\n   padding-right: 40px;\n   padding-top: 40px;\n   border: 2px solid #ccc;\n"
+                },
+                {
+                    "date": 1685978287237,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -100,9 +100,9 @@\n   margin-bottom: 20px;\n }\n \n .el-form-item button:first-of-type {\n-  margin-right: 20px;\n+  margin-right: 30px;\n }\n \n .el-form-item button:last-of-type {\n   margin-left: 20px;\n"
+                },
+                {
+                    "date": 1685978353795,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -107,9 +107,9 @@\n .el-form-item button:last-of-type {\n   margin-left: 20px;\n }\n /deep/ .el-form-item__label {\n-  color: #fff;\n+  color: #cc0c0c;\n }\n \n /deep/.el-input__inner {\n   background-color: #f4e8e8;\n"
+                },
+                {
+                    "date": 1685978360016,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -107,9 +107,9 @@\n .el-form-item button:last-of-type {\n   margin-left: 20px;\n }\n /deep/ .el-form-item__label {\n-  color: #cc0c0c;\n+  color: #fff;\n }\n \n /deep/.el-input__inner {\n   background-color: #f4e8e8;\n"
+                },
+                {
+                    "date": 1685978375875,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -107,8 +107,9 @@\n .el-form-item button:last-of-type {\n   margin-left: 20px;\n }\n /deep/ .el-form-item__label {\n+  // 字体\n   color: #fff;\n }\n \n /deep/.el-input__inner {\n"
+                },
+                {
+                    "date": 1685978397030,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -105,14 +105,16 @@\n }\n \n .el-form-item button:last-of-type {\n   margin-left: 20px;\n+  // 右按钮\n }\n /deep/ .el-form-item__label {\n   // 字体\n   color: #fff;\n }\n \n /deep/.el-input__inner {\n   background-color: #f4e8e8;\n+  // 文本框\n }\n </style>\n\\ No newline at end of file\n"
+                }
+            ],
+            "date": 1685977120369,
+            "name": "Commit-0",
+            "content": "<template>\n  <div class=\"login\">\n    <el-form ref=\"form\" :model=\"form\" :rules=\"rules\" label-width=\"80px\">\n      <el-form-item label=\"用户名:\" prop=\"username\">\n        <el-input v-model=\"form.username\"></el-input>\n      </el-form-item>\n      <el-form-item label=\"密码:\" prop=\"password\">\n        <el-input v-model=\"form.password\"></el-input>\n      </el-form-item>\n\n      <el-form-item>\n        <el-button type=\"primary\" @click=\"login('form')\">登录</el-button>\n        <el-button>取消</el-button>\n      </el-form-item>\n    </el-form>\n  </div>\n</template>\n\n<script>\nimport { User } from '@/api/index'\nexport default {\n  name: 'Login',\n  data() {\n    return {\n      form: {\n        username: '',\n        password: ''\n      },\n      rules: {\n        username: [\n          { required: true, message: '请输入用户名', trigger: 'blur' },\n          { min: 5, max: 16, message: '长度在 5 到 16 个字符', trigger: 'blur' }\n        ],\n        password: [\n          { required: true, message: '请输入密码', trigger: 'blur' },\n          { min: 6, max: 16, message: '长度在 6 到 16 个字符', trigger: 'blur' }\n        ]\n      }\n    }\n  },\n  methods: {\n    login(form) {\n      // 表单验证\n      this.$refs[form].validate(async (valid) => {\n        if (!valid) {\n          return false\n        }\n        // 发起请求调用登录接口\n        let { status, msg, data } = await User.login({ ...this.form })\n        if (!status) {\n          // 登录失败\n          // 1.提示信息\n          this.$message.error(msg)\n          return false\n        } else {\n          // 将信息保存本地\n          localStorage.setItem('uid', data.id)\n          localStorage.setItem('role', data.role)\n          localStorage.setItem('token', data.token)\n          // 给成功提示\n          this.$message({\n            message: msg,\n            type: 'success'\n          })\n          // 跳转\n          this.$router.push('/goods')\n        }\n      })\n    }\n  }\n}\n</script>\n\n<style lang=\"less\" scoped>\n.login {\n  display: flex;\n  justify-content: center;\n  align-items: center;\n  min-height: 100vh;\n  background: url('@/assets/images/loginbg.jpg') no-repeat;\n  height: 100%;\n  width: 100%;\n  overflow: hidden;\n}\n\n.el-form {\n  width: 40%;\n  height: 40%;\n  padding: 20px;\n  padding-right: 40px;\n  padding-top: 40px;\n  border: 2px solid #ccc;\n}\n/deep/ .el-form-item__label {\n  color: #fff;\n}\n\n/deep/.el-input__inner {\n  background-color: #ccc;\n}\n</style>"
+        }
+    ]
+}
