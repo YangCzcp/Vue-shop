@@ -9,6 +9,7 @@
         </van-swipe-item>
       </van-swipe>
     </div>
+    <!-- 分类 -->
     <div>
       <div class="cate">
         <van-swipe>
@@ -41,7 +42,7 @@ export default {
   name: 'Index',
   data() {
     return {
-      images: ['https://img01.yzcdn.cn/vant/apple-1.jpg', 'https://img01.yzcdn.cn/vant/apple-2.jpg'],
+      images: [require('../assets/swiper/1.jpg'), require('../assets/swiper/2.jpg')],
       cate_list: []
     }
   },

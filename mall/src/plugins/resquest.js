@@ -1,7 +1,7 @@
 import axios from 'axios'
 import {  Notify,Toast  } from 'vant';
 import router from '@/router'
-
+axios.defaults.baseURL = 'http://139.9.195.224:3010'
 let loading;
 // 请求拦截
 axios.interceptors.request.use(function (config) {

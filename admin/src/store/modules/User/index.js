@@ -1,15 +1,19 @@
-import mutations  from "./mutations"
-import actions  from "./actions"
-import getters from './getters'
-// 保存数据
-const state={
-    profile:''  // 保存用户信息
+import actions from './actions.js'
+import mutations from './mutations.js'
+import getters from './getters.js'
+
+const state = {
+    // 保存用户信息
+    profile: {
+        username: '张三'
+    }
 }
 
-export default{
-    namespaced:true,
+
+export default {
+    namespaced: true,
     state,
-    mutations,
     actions,
+    mutations,
     getters
 }

@@ -1,11 +1,13 @@
 <template>
   <div class="header">
-    <div class="left"><img class="logo" src="../assets/images/logo.jpg" alt="" /></div>
-    <div class="menu">
-      <el-menu class="el-menu-demo" mode="horizontal">
-        <el-submenu index="2">
-          <template slot="title">{{ username }}</template>
-          <el-menu-item index="2-1" @click="logOut">退出</el-menu-item>
+    <div class="logo">
+      <img src="../assets/images/logo.png" alt="" />
+    </div>
+    <div>
+      <el-menu :default-active="activeIndex" class="el-menu-demo" mode="horizontal">
+        <el-submenu index="1">
+          <template slot="title">{{ profile }}</template>
+          <el-menu-item index="1-1" @click="logOut">退出</el-menu-item>
         </el-submenu>
       </el-menu>
     </div>
@@ -16,23 +18,28 @@
 import { mapGetters } from 'vuex'
 export default {
   name: 'Header',
-  created() {
-    this.loadInfo()
+  data() {
+    return {
+      activeIndex: '1'
+    }
   },
   computed: {
     ...mapGetters({
-      username: 'User/profile'
+      profile: 'User/profile'
     })
   },
+  created() {
+    this.getUsers()
+  },
   methods: {
-    // 加载管理员信息
-    loadInfo() {
-      this.$store.dispatch('User/loadInfo', { id: localStorage.getItem('uid') })
-    },
-    // 退出登录
     logOut() {
       localStorage.clear()
       this.$router.push('/')
+    },
+    getUsers() {
+      // 调用 store/user/actions/loadInfo
+
+      this.$store.dispatch('User/loadInfo', { id: localStorage.getItem('uid') })
     }
   }
 }
@@ -42,9 +49,11 @@ export default {
 .header {
   display: flex;
   justify-content: space-between;
-
-  .logo {
-    height: 50px;
-  }
+}
+.logo img {
+  width: 100px;
+}
+.el-menu {
+  background: #000;
 }
 </style>

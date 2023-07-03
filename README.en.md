@@ -1,7 +1,7 @@
-# shop-mall-class2
+# shop-mall-class
 
 #### Description
-
+商城
 
 #### Software Architecture
 Software architecture description

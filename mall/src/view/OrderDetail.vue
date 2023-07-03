@@ -48,7 +48,7 @@
       </van-cell>
     </van-cell-group>
     <div class="status">
-      <van-button v-if="info.order_state == 0" type="warning" size="mini" @click="updateStatus(3)">支付</van-button>
+      <van-button v-if="info.order_state == 0" type="warning" size="mini" @click="pay">支付</van-button>
       <van-button v-if="info.order_state == 3" type="warning" size="mini">等待发货</van-button>
       <van-button v-if="info.order_state == 4" type="warning" size="mini" @click="updateStatus(5)">确认收货</van-button>
     </div>
@@ -109,6 +109,16 @@ export default {
       }
       Toast.success(msg)
       this.getOrderInfo()
+    },
+    // 支付
+    async pay() {
+      let { code, result } = await Orders.pcpay({ orderId: this.info.id })
+
+      if (code != 200) {
+        Toast.fail(msg)
+        return false
+      }
+      window.open(result)
     }
   }
 }

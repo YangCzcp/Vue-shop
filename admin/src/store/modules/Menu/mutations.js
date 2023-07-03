@@ -1,8 +1,8 @@
-
-const saveMenu=(state,data)=>{
-    state.menus = data
+const setMenus = (state,data)=>{
+    state.menu = data
 }
 
-export default{
-    saveMenu
+
+export default {
+    setMenus
 }

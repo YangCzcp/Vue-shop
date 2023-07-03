@@ -1,17 +1,15 @@
 import Vue from 'vue'
 import Vuex from 'vuex'
-import createPersistedState from "vuex-plugin-persistedstate";
-
+Vue.use(Vuex)
+// 这是所有vuex的入口
 import User from './modules/User/index'
 import Menu from './modules/Menu/index'
 
-Vue.use(Vuex);
 
 
 export default new Vuex.Store({
     modules:{
-        User:User,
-        Menu:Menu
-    },
-    plugins: [createPersistedState()]
+        User,
+        Menu
+    }
 })
